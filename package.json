@@ -1,0 +1,33 @@
+{
+  "name": "usps",
+  "version": "1.0.0",
+  "description": "USPS API wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/.bin/lab -v -t 100 -a code -m 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjihrig/usps.git"
+  },
+  "keywords": [
+    "USPS",
+    "post",
+    "office"
+  ],
+  "author": "Colin J. Ihrig <cjihrig@gmail.com> (http://www.cjihrig.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cjihrig/usps/issues"
+  },
+  "homepage": "https://github.com/cjihrig/usps",
+  "dependencies": {
+    "faketoe": "2.x.x",
+    "hoek": "2.x.x",
+    "wreck": "5.x.x"
+  },
+  "devDependencies": {
+    "code": "1.x.x",
+    "lab": "5.x.x"
+  }
+}
