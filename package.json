@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cjihrig/usps.git"
+    "url": "https://github.com/continuationlabs/usps.git"
   },
   "keywords": [
     "USPS",
     "post",
     "office"
   ],
-  "author": "Colin J. Ihrig <cjihrig@gmail.com> (http://www.cjihrig.com/)",
+  "author": "Continuation Labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cjihrig/usps/issues"
+    "url": "https://github.com/continuationlabs/usps/issues"
   },
-  "homepage": "https://github.com/cjihrig/usps",
+  "homepage": "https://github.com/continuationlabs/usps",
   "dependencies": {
     "faketoe": "2.x.x",
     "hoek": "2.x.x",
