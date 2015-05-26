@@ -2,7 +2,7 @@
   "name": "usps",
   "version": "1.0.1",
   "description": "USPS API wrapper",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node node_modules/.bin/lab -v -t 100 -a code -m 10000"
   },
