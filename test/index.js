@@ -12,10 +12,9 @@ Code.settings.truncateMessages = false;
 
 var userId = process.env.USPS_USER_ID;
 
-
-describe('USPS API', function() {
-  describe('Usps()', function() {
-    it('can construct with the new keyword', function(done) {
+describe('USPS API', function () {
+  describe('Usps()', function () {
+    it('can construct with the new keyword', function (done) {
       var usps = new Usps({userId: userId});
 
       expect(usps._userId).to.equal(userId);
@@ -24,7 +23,7 @@ describe('USPS API', function() {
       done();
     });
 
-    it('can construct without the new keyword', function(done) {
+    it('can construct without the new keyword', function (done) {
       var usps = Usps({userId: userId});
 
       expect(usps._userId).to.equal(userId);
@@ -33,10 +32,10 @@ describe('USPS API', function() {
       done();
     });
 
-    it('rejects invalid options', function(done) {
-      function fail(arg) {
-        return function() {
-          new Usps(arg);
+    it('rejects invalid options', function (done) {
+      function fail (arg) {
+        return function () {
+          Usps(arg);
         };
       }
 
@@ -51,12 +50,12 @@ describe('USPS API', function() {
     });
   });
 
-  describe('cityStateLookup()', function() {
-    it('successfully looks up a zip code', function(done) {
+  describe('cityStateLookup()', function () {
+    it('successfully looks up a zip code', function (done) {
       var usps = new Usps({userId: userId});
       var options = {zip: '10001'};
 
-      usps.cityStateLookup(options, function(err, results) {
+      usps.cityStateLookup(options, function (err, results) {
         expect(err).to.not.exist();
         expect(results).to.deep.equal({
           zip: '10001',
@@ -67,11 +66,11 @@ describe('USPS API', function() {
       });
     });
 
-    it('handles error responses', function(done) {
+    it('handles error responses', function (done) {
       var usps = new Usps({userId: userId});
       var options = {zip: '?'};
 
-      usps.cityStateLookup(options, function(err, results) {
+      usps.cityStateLookup(options, function (err, results) {
         expect(err).to.exist();
         expect(err.message).to.equal('ZIPCode must be 5 characters');
         expect(results).to.equal(err);
@@ -79,11 +78,11 @@ describe('USPS API', function() {
       });
     });
 
-    it('looks up multiple zip codes at once', function(done) {
+    it('looks up multiple zip codes at once', function (done) {
       var usps = new Usps({userId: userId});
       var options = {zip: ['90210', '10001']};
 
-      usps.cityStateLookup(options, function(err, results) {
+      usps.cityStateLookup(options, function (err, results) {
         expect(err).to.not.exist();
         expect(results).to.deep.equal([
           {zip: '90210', city: 'BEVERLY HILLS', state: 'CA'},
@@ -93,11 +92,11 @@ describe('USPS API', function() {
       });
     });
 
-    it('handles error responses in multi zip code lookup', function(done) {
+    it('handles error responses in multi zip code lookup', function (done) {
       var usps = new Usps({userId: userId});
       var options = {zip: ['?', '10001']};
 
-      usps.cityStateLookup(options, function(err, results) {
+      usps.cityStateLookup(options, function (err, results) {
         expect(err).to.exist();
         expect(err.message).to.equal('ZIPCode must be 5 characters');
         expect(results).to.be.an.array();
@@ -112,12 +111,12 @@ describe('USPS API', function() {
       });
     });
 
-    it('rejects invalid options', function(done) {
-      function fail(options) {
-        return function() {
+    it('rejects invalid options', function (done) {
+      function fail (options) {
+        return function () {
           var usps = new Usps({userId: userId});
 
-          usps.cityStateLookup(options, function() {});
+          usps.cityStateLookup(options, function () {});
         };
       }
 
@@ -132,11 +131,11 @@ describe('USPS API', function() {
       done();
     });
 
-    it('handles unreachable USPS server', function(done) {
+    it('handles unreachable USPS server', function (done) {
       var usps = new Usps({userId: userId, host: 'foo'});
       var options = {zip: '10001'};
 
-      usps.cityStateLookup(options, function(err, results) {
+      usps.cityStateLookup(options, function (err, results) {
         expect(err).to.exist();
         expect(err.code).to.equal('ECONNREFUSED');
         expect(err.errno).to.equal('ECONNREFUSED');
