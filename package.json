@@ -1,11 +1,11 @@
 {
   "name": "usps",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "USPS API wrapper",
   "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
   "main": "lib/index.js",
   "scripts": {
-    "test": "semistandard && lab -v -t 100 -a code -m 10000"
+    "test": "belly-button && lab -v -t 100 -a code -m 10000"
   },
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
     "wreck": "6.x.x"
   },
   "devDependencies": {
+    "belly-button": "1.x.x",
     "code": "1.x.x",
-    "lab": "5.x.x",
-    "semistandard": "7.x.x"
+    "lab": "6.x.x"
   }
 }
