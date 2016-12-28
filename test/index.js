@@ -57,7 +57,7 @@ describe('USPS API', function () {
 
       usps.cityStateLookup(options, function (err, results) {
         expect(err).to.not.exist();
-        expect(results).to.deep.equal({
+        expect(results).to.equal({
           zip: '10001',
           city: 'NEW YORK',
           state: 'NY'
@@ -84,7 +84,7 @@ describe('USPS API', function () {
 
       usps.cityStateLookup(options, function (err, results) {
         expect(err).to.not.exist();
-        expect(results).to.deep.equal([
+        expect(results).to.equal([
           {zip: '90210', city: 'BEVERLY HILLS', state: 'CA'},
           {zip: '10001', city: 'NEW YORK', state: 'NY'}
         ]);
@@ -102,7 +102,7 @@ describe('USPS API', function () {
         expect(results).to.be.an.array();
         expect(results.length).to.equal(2);
         expect(results[0]).to.equal(err);
-        expect(results[1]).to.deep.equal({
+        expect(results[1]).to.equal({
           zip: '10001',
           city: 'NEW YORK',
           state: 'NY'
