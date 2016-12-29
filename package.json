@@ -1,6 +1,6 @@
 {
   "name": "usps",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "USPS API wrapper",
   "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
   "main": "lib/index.js",
