@@ -3,6 +3,8 @@
 [![Current Version](https://img.shields.io/npm/v/usps.svg)](https://www.npmjs.org/package/usps)
 [![Build Status via Travis CI](https://travis-ci.org/continuationlabs/usps.svg?branch=master)](https://travis-ci.org/continuationlabs/usps)
 ![Dependencies](http://img.shields.io/david/continuationlabs/usps.svg)
+[![belly-button-style](https://img.shields.io/badge/eslint-bellybutton-4B32C3.svg)](https://github.com/continuationlabs/belly-button)
+
 
 JavaScript API wrapper for the United States Postal Service (USPS) APIs. The USPS APIs are
 XML based. This module abstracts away the details of working with XML.
